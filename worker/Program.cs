@@ -16,8 +16,13 @@ namespace Worker
         {
             try
             {
-                var pgsql = OpenDbConnection("Server=lksn-db.caa35omlxgeu.us-east-1.rds.amazonaws.com;Username=admin;Password=LKSNCC2024;");
-                var redisConn = OpenRedisConnection("lks-redis");
+                var pgsql = OpenDbConnection("Server=lksn-db.caa35omlxgeu.us-east-1.rds.amazonaws.com;Username=admin;Password=LKSNCC2024;Database=lksndb2024");
+                var options = new ConfigurationOptions
+                    {
+                        EndPoints = { "master.lks-redis.p7qul5.use1.cache.amazonaws.com:6379" },
+                        Ssl = true
+                    };
+                var redisConn = OpenRedisConnection("master.lks-redis.p7qul5.use1.cache.amazonaws.com:6379");
                 var redis = redisConn.GetDatabase();
 
                 // Keep alive is not implemented in Npgsql yet. This workaround was recommended:
