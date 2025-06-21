@@ -90,9 +90,9 @@ jobs:
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
           # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
           run: |
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$WORKER_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$VOTE_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$RESULT_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$WORKER_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$VOTE_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$RESULT_IMAGE_TAG
 
   node1:
       needs: build
@@ -129,9 +129,9 @@ jobs:
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
           # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
           run: |
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$WORKER_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$VOTE_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$RESULT_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$WORKER_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$VOTE_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$RESULT_IMAGE_TAG
 
   node2:
       needs: build
@@ -168,9 +168,9 @@ jobs:
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
           # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
           run: |
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$WORKER_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$VOTE_IMAGE_TAG
-            docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$RESULT_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$WORKER_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$VOTE_IMAGE_TAG
+            docker pull $ECR_REGISTRY/${{ env.$ECR_REGISTRY }}:$RESULT_IMAGE_TAG
 
   deploy:
     needs:
