@@ -128,7 +128,7 @@ jobs:
             WORKER_IMAGE_TAG: worker-${{ env.ENV }}-latest
             VOTE_IMAGE_TAG: vote-${{ env.ENV }}-latest
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
-          # Build docker images for vote module and push it to ECR so that it can be deployed to EKS
+          # Build docker images for vote module and push it to ECR so that it can be deployed to EKS.
           run: |
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$WORKER_IMAGE_TAG
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:$VOTE_IMAGE_TAG
