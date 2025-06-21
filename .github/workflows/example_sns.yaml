@@ -2,7 +2,7 @@ name: Example Sent notification to email
 on:
   push:
     branches:
-      - "prod"
+      - "prod-test"
 
 env:
   AWS_REGION: us-east-1                 
