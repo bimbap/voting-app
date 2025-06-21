@@ -1,11 +1,19 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:437248787701:task-definition/lks-worker-task:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:437248787701:task-definition/lks-result-task:1",
     "containerDefinitions": [
         {
-            "name": "lks-worker-container",
-            "image": "437248787701.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:worker-dev-latest",
+            "name": "lks-result-container",
+            "image": "437248787701.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-dev-latest",
             "cpu": 0,
-            "portMappings": [],
+            "portMappings": [
+                {
+                    "name": "containers",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
             "essential": true,
             "environment": [],
             "environmentFiles": [],
@@ -15,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/lks-worker-task",
+                    "awslogs-group": "/ecs/lks-result-task",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -27,7 +35,7 @@
             "systemControls": []
         }
     ],
-    "family": "lks-worker-task",
+    "family": "lks-result-task",
     "taskRoleArn": "arn:aws:iam::437248787701:role/LabRole",
     "executionRoleArn": "arn:aws:iam::437248787701:role/LabRole",
     "networkMode": "awsvpc",
@@ -80,7 +88,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-06-21T09:04:18.242Z",
+    "registeredAt": "2025-06-21T09:55:35.107Z",
     "registeredBy": "arn:aws:sts::437248787701:assumed-role/voclabs/user4100116=JAKARTA_TIMUR_2_-_IBRAHIM",
     "enableFaultInjection": false,
     "tags": []
