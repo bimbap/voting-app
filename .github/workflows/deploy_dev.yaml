@@ -39,7 +39,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: ${{ env.$ECR_REPOSITORY }}
+        ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
         WORKER_IMAGE_TAG: worker-${{ env.ENV }}-latest
         VOTE_IMAGE_TAG: vote-${{ env.ENV }}-latest
         RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
@@ -85,7 +85,7 @@ jobs:
           id: pull-image
           env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-            ECR_REPOSITORY: ${{ env.$ECR_REPOSITORY }}
+            ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
             WORKER_IMAGE_TAG: worker-${{ env.ENV }}-latest
             VOTE_IMAGE_TAG: vote-${{ env.ENV }}-latest
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
@@ -124,7 +124,7 @@ jobs:
           id: pull-image
           env:
             ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-            ECR_REPOSITORY: ${{ env.$ECR_REPOSITORY }}
+            ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
             WORKER_IMAGE_TAG: worker-${{ env.ENV }}-latest
             VOTE_IMAGE_TAG: vote-${{ env.ENV }}-latest
             RESULT_IMAGE_TAG: result-${{ env.ENV }}-latest
