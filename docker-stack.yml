@@ -22,7 +22,7 @@ services:
       - backend
 
   vote:
-    image: dockersamples/examplevotingapp_vote
+    image: 437248787701.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:vote-dev-latest
     ports:
       - 5000:80
     networks:
@@ -31,7 +31,7 @@ services:
       replicas: 3
 
   result:
-    image: dockersamples/examplevotingapp_result
+    image: 437248787701.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:result-dev-latest
     ports:
       - 5001:80
     networks:
@@ -40,7 +40,7 @@ services:
       replicas: 3
 
   worker:
-    image: dockersamples/examplevotingapp_worker
+    image: 437248787701.dkr.ecr.us-east-1.amazonaws.com/lks-voting-image:worker-dev-latest
     networks:
       - frontend
       - backend
