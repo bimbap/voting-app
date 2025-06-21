@@ -172,7 +172,11 @@ jobs:
             docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$VOTE_IMAGE_TAG
             docker pull $ECR_REGISTRY/${{ env.$ECR.REGISTRY }}:$RESULT_IMAGE_TAG
 
-  deploy:  
+  deploy:
+    needs:
+      - master
+      - node1
+      - node2
     name: Deploy Application into docker swarm
     runs-on: main
     steps:
