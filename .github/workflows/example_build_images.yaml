@@ -17,9 +17,9 @@ permissions:
   id-token: write
   contents: read
 
-jobs:
+jobs: 
   build:
-    name: Build Image Production
+    name: Build Image Developer
     runs-on: ubuntu-latest
     environment: Production
     steps:
