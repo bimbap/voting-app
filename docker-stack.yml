@@ -14,7 +14,7 @@ services:
   db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_USER: "admin"
+      POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "LKSNCC2024"
     volumes:
       - db-data:/var/lib/postgresql/data
