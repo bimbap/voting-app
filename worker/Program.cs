@@ -22,7 +22,7 @@ namespace Worker
                         EndPoints = { "master.lks-redis.p7qul5.use1.cache.amazonaws.com:6379" },
                         Ssl = true
                     };
-                var redisConn = OpenRedisConnection("master.lks-redis.p7qul5.use1.cache.amazonaws.com:6379");
+                var redisConn = ConnectionMultiplexer.Connect(options);
                 var redis = redisConn.GetDatabase();
 
                 // Keep alive is not implemented in Npgsql yet. This workaround was recommended:
