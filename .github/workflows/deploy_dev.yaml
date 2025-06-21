@@ -179,7 +179,7 @@ jobs:
       - node1
       - node2
     name: Deploy Application into docker swarm
-    runs-on: main
+    runs-on: voting-app
     steps:
       - name: Checkout
         uses: actions/checkout@v3
